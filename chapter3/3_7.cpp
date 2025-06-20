@@ -18,16 +18,39 @@ struct employee{
 int main()
 {
     char slash;
+    char ch;
     cout<<"enter date employee: number,earning,first symbol role and when he start work date"<<endl;
     employee employee_user;
-    cin<<employee_user.number_empl<<employee_user.earning_empl<<employee_user.role
-        <<employee_user.start.day<<slash<<employee_user.start.month<<slash
-        <<employee_user.start.year;
+    cin>>employee_user.number_empl>>employee_user.earning_empl>>ch
+        >>employee_user.start.day>>slash>>employee_user.start.month>>slash
+        >>employee_user.start.year;
     cout<<"date of employee: \n"<<"number employee: "<<employee_user.number_empl<<endl
         <<"employee earning: "<<employee_user.earning_empl<<endl
-        <<"employee start working"<<employee_user.start.day<<slash<<employee_user.start.month
+        <<"employee start working: "<<employee_user.start.day<<slash<<employee_user.start.month
         <<slash<<employee_user.start.year<<endl<<"employee role: ";
-switch (user_type)
+    switch (ch)
+    {
+        case 'l':
+            employee_user.role =laborer;
+            break;
+        case 's':
+            employee_user.role = secretary;
+            break;
+        case 'm':
+            employee_user.role =manager;
+            break;
+        case 'a':
+            employee_user.role = accountant;
+            break;
+        case 'e':
+           employee_user.role =executive;
+            break;
+        case 'r':
+            employee_user.role = researcher;
+        default:
+            break;
+    }
+switch (employee_user.role)
     {
         case 0:
             cout<<"laborer"<<endl;;
