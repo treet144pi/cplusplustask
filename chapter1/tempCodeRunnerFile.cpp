@@ -1,0 +1,1 @@
+setiosflags(ios::left)
